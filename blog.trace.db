@@ -1,0 +1,24 @@
+2019-03-19 17:25:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" non trouvée
+Table "POST" not found; SQL statement:
+select * from post where uuid=49895811-52d5-4bae-b630-90e38450052c [42102-199]
+2019-03-19 17:25:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" non trouvée
+Table "POST" not found; SQL statement:
+select * from post where uuid=49895811-52d5-4bae-b630-90e38450052c [42102-199]
+2019-03-19 17:26:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" non trouvée
+Table "POST" not found; SQL statement:
+select * from post where uuid=49895811-52d5-4bae-b630-90e38450052c [42102-199]
+2019-03-19 17:26:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM POSTS WHERE UUID=49895811-52D5[*]-4BAE-B630-90E38450052C "
+Syntax error in SQL statement "SELECT * FROM POSTS WHERE UUID=49895811-52D5[*]-4BAE-B630-90E38450052C "; SQL statement:
+select * from posts where uuid=49895811-52d5-4bae-b630-90e38450052c [42000-199]
+2019-03-19 17:27:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM POSTS WHERE UUID=49895811-52D5[*]-4BAE-B630-90E38450052C "
+Syntax error in SQL statement "SELECT * FROM POSTS WHERE UUID=49895811-52D5[*]-4BAE-B630-90E38450052C "; SQL statement:
+select * from posts where uuid=49895811-52d5-4bae-b630-90e38450052c [42000-199]
+2019-03-19 17:27:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM POSTS WHERE UUID=9DFCCAA1[*]-7A25-4CA9-AF76-38915382A457 "
+Syntax error in SQL statement "SELECT * FROM POSTS WHERE UUID=9DFCCAA1[*]-7A25-4CA9-AF76-38915382A457 "; SQL statement:
+select * from posts where uuid=9dfccaa1-7a25-4ca9-af76-38915382a457 [42000-199]

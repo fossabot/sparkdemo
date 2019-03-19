@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Application",
+            "request": "launch",
+            "mainClass": "com.gehc.apps.fmk.sparkdemo.Application",
+            "projectName": "sparkdemo"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Books",
+            "request": "launch",
+            "mainClass": "com.gehc.apps.fmk.sparkdemo.Books",
+            "projectName": "sparkdemo"
+        }
+    ]
+}
