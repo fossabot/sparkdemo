@@ -1,24 +1,154 @@
-2019-03-19 17:25:28 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" non trouvée
-Table "POST" not found; SQL statement:
-select * from post where uuid=49895811-52d5-4bae-b630-90e38450052c [42102-199]
-2019-03-19 17:25:59 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" non trouvée
-Table "POST" not found; SQL statement:
-select * from post where uuid=49895811-52d5-4bae-b630-90e38450052c [42102-199]
-2019-03-19 17:26:20 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "POST" non trouvée
-Table "POST" not found; SQL statement:
-select * from post where uuid=49895811-52d5-4bae-b630-90e38450052c [42102-199]
-2019-03-19 17:26:52 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM POSTS WHERE UUID=49895811-52D5[*]-4BAE-B630-90E38450052C "
-Syntax error in SQL statement "SELECT * FROM POSTS WHERE UUID=49895811-52D5[*]-4BAE-B630-90E38450052C "; SQL statement:
-select * from posts where uuid=49895811-52d5-4bae-b630-90e38450052c [42000-199]
-2019-03-19 17:27:03 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM POSTS WHERE UUID=49895811-52D5[*]-4BAE-B630-90E38450052C "
-Syntax error in SQL statement "SELECT * FROM POSTS WHERE UUID=49895811-52D5[*]-4BAE-B630-90E38450052C "; SQL statement:
-select * from posts where uuid=49895811-52d5-4bae-b630-90e38450052c [42000-199]
-2019-03-19 17:27:40 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM POSTS WHERE UUID=9DFCCAA1[*]-7A25-4CA9-AF76-38915382A457 "
-Syntax error in SQL statement "SELECT * FROM POSTS WHERE UUID=9DFCCAA1[*]-7A25-4CA9-AF76-38915382A457 "; SQL statement:
-select * from posts where uuid=9dfccaa1-7a25-4ca9-af76-38915382a457 [42000-199]
+2019-03-20 00:09:18 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Impossible d'analyser "DATE" constante "2019-03-19T00:00:00.0+0100"
+Cannot parse "DATE" constant "2019-03-19T00:00:00.0+0100"; SQL statement:
+INSERT INTO posts (title,summary,content,author,tags,categories,created_at,updated_at) values ('title1','summary1','content1','Fred','tag1,tag2,tag3','home','2019-03-19T00:00:00.0+0100','2019-03-19T00:00:00.0+0100') -- ('title1', 'summary1', 'content1', 'Fred', 'tag1,tag2,tag3', 'home', '2019-03-19T00:00:00.0+0100', '2019-03-19T00:00:00.0+0100') [22007-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:455)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:75)
+	at org.h2.value.Value.convertToDate(Value.java:1059)
+	at org.h2.value.Value.convertTo(Value.java:774)
+	at org.h2.value.Value.convertTo(Value.java:735)
+	at org.h2.table.Column.convert(Column.java:199)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:164)
+	at org.h2.command.dml.Insert.update(Insert.java:132)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:133)
+	at org.h2.command.Command.executeUpdate(Command.java:267)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:235)
+	at org.flywaydb.core.internal.sqlscript.StandardSqlStatement.execute(StandardSqlStatement.java:42)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:189)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:125)
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:77)
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:367)
+	at org.flywaydb.core.internal.command.DbMigrate.access$200(DbMigrate.java:54)
+	at org.flywaydb.core.internal.command.DbMigrate$3.call(DbMigrate.java:284)
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74)
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:281)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:246)
+	at org.flywaydb.core.internal.command.DbMigrate.access$100(DbMigrate.java:54)
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:164)
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:161)
+	at org.flywaydb.core.internal.database.base.Connection$1.call(Connection.java:147)
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74)
+	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:143)
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:155)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:161)
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:139)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1395)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1356)
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1711)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356)
+	at com.gehc.apps.fmk.sparkdemo.DatabaseService.<init>(DatabaseService.java:24)
+	at com.gehc.apps.fmk.sparkdemo.PostService.<init>(PostService.java:15)
+	at com.gehc.apps.fmk.sparkdemo.Application.main(Application.java:34)
+Caused by: java.lang.NumberFormatException: 19T00:00:00.0+0100
+	at org.h2.util.StringUtils.parseUInt31(StringUtils.java:1019)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:371)
+	at org.h2.value.ValueDate.parse(ValueDate.java:73)
+	... 37 more
+2019-03-20 00:10:50 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Impossible d'analyser "DATE" constante "2019/03/19"
+Cannot parse "DATE" constant "2019/03/19"; SQL statement:
+INSERT INTO posts (title,summary,content,author,tags,categories,created_at,updated_at) values ('title1','summary1','content1','Fred','tag1,tag2,tag3','home','2019-03-19','2019/03/19') -- ('title1', 'summary1', 'content1', 'Fred', 'tag1,tag2,tag3', 'home', '2019-03-19', '2019/03/19') [22007-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:455)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:75)
+	at org.h2.value.Value.convertToDate(Value.java:1059)
+	at org.h2.value.Value.convertTo(Value.java:774)
+	at org.h2.value.Value.convertTo(Value.java:735)
+	at org.h2.table.Column.convert(Column.java:199)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:164)
+	at org.h2.command.dml.Insert.update(Insert.java:132)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:133)
+	at org.h2.command.Command.executeUpdate(Command.java:267)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:235)
+	at org.flywaydb.core.internal.sqlscript.StandardSqlStatement.execute(StandardSqlStatement.java:42)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:189)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:125)
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:77)
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:367)
+	at org.flywaydb.core.internal.command.DbMigrate.access$200(DbMigrate.java:54)
+	at org.flywaydb.core.internal.command.DbMigrate$3.call(DbMigrate.java:284)
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74)
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:281)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:246)
+	at org.flywaydb.core.internal.command.DbMigrate.access$100(DbMigrate.java:54)
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:164)
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:161)
+	at org.flywaydb.core.internal.database.base.Connection$1.call(Connection.java:147)
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74)
+	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:143)
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:155)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:161)
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:139)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1395)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1356)
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1711)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356)
+	at com.gehc.apps.fmk.sparkdemo.DatabaseService.<init>(DatabaseService.java:24)
+	at com.gehc.apps.fmk.sparkdemo.PostService.<init>(PostService.java:15)
+	at com.gehc.apps.fmk.sparkdemo.Application.main(Application.java:34)
+Caused by: java.lang.NumberFormatException: For input string: "2019/0"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:369)
+	at org.h2.value.ValueDate.parse(ValueDate.java:73)
+	... 37 more
+2019-03-20 00:11:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Impossible d'analyser "DATE" constante "2019/03/19"
+Cannot parse "DATE" constant "2019/03/19"; SQL statement:
+INSERT INTO posts (title,summary,content,author,tags,categories,created_at,updated_at) values ('title1','summary1','content1','Fred','tag1,tag2,tag3','home','2019/03/19','2019/03/19') -- ('title1', 'summary1', 'content1', 'Fred', 'tag1,tag2,tag3', 'home', '2019/03/19', '2019/03/19') [22007-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:455)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:75)
+	at org.h2.value.Value.convertToDate(Value.java:1059)
+	at org.h2.value.Value.convertTo(Value.java:774)
+	at org.h2.value.Value.convertTo(Value.java:735)
+	at org.h2.table.Column.convert(Column.java:199)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:164)
+	at org.h2.command.dml.Insert.update(Insert.java:132)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:133)
+	at org.h2.command.Command.executeUpdate(Command.java:267)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:235)
+	at org.flywaydb.core.internal.sqlscript.StandardSqlStatement.execute(StandardSqlStatement.java:42)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:189)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:125)
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:77)
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:367)
+	at org.flywaydb.core.internal.command.DbMigrate.access$200(DbMigrate.java:54)
+	at org.flywaydb.core.internal.command.DbMigrate$3.call(DbMigrate.java:284)
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74)
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:281)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:246)
+	at org.flywaydb.core.internal.command.DbMigrate.access$100(DbMigrate.java:54)
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:164)
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:161)
+	at org.flywaydb.core.internal.database.base.Connection$1.call(Connection.java:147)
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74)
+	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:143)
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:155)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:161)
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:139)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1395)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1356)
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1711)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356)
+	at com.gehc.apps.fmk.sparkdemo.DatabaseService.<init>(DatabaseService.java:24)
+	at com.gehc.apps.fmk.sparkdemo.PostService.<init>(PostService.java:15)
+	at com.gehc.apps.fmk.sparkdemo.Application.main(Application.java:34)
+Caused by: java.lang.NumberFormatException: For input string: "2019/0"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:369)
+	at org.h2.value.ValueDate.parse(ValueDate.java:73)
+	... 37 more

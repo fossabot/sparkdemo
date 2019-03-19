@@ -1,5 +1,5 @@
 CREATE TABLE posts (
-    uuid uuid primary key,
+    uuid UUID primary key,
     summary text,
     title text not null,
     content text not null,

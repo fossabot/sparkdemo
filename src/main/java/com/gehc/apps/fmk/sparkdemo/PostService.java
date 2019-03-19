@@ -6,11 +6,8 @@ import java.util.UUID;
 
 import com.gehc.apps.fmk.sparkdemo.entity.Post;
 
-import org.eclipse.jetty.http.HttpStatus;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.sql2o.Connection;
-
-import spark.QueryParamsMap;
 
 public class PostService extends DatabaseService implements IPostService {
 
@@ -27,7 +24,7 @@ public class PostService extends DatabaseService implements IPostService {
             if (post.isValide()) {
                 if (post.getUuid() != null) {
                     sqlQuery = "UPDATE posts set title=:title, " + "summary=:summary, content=:content, "
-                            + "author:=author, tags=:tags, " + "categories=:categories, "
+                            + "author=:author, tags=:tags, " + "categories=:categories, "
                             + "publication_status=:status, " + "created_at=:createdAt, " + "updated_at=:updatedAt "
                             + "where uuid=:uuid";
                 } else {
@@ -67,6 +64,7 @@ public class PostService extends DatabaseService implements IPostService {
         return find(sqlQuery, offset, pageSize, "created_at ASC");
     }
 
+    @Counted(name = "post-by-author-counter", description = "The number of time find posts by author", displayName = "Post find by author counter")
     @Override
     public List<Post> findForAuthor(String author, int offset, int pageSize) {
         String sqlQuery = "select p.* from posts p where p.author = :author";
@@ -81,12 +79,15 @@ public class PostService extends DatabaseService implements IPostService {
         return false;
     }
 
+    @Counted(name = "post-by-uuid-counter", description = "The number of time a post is retrieve on its uuid", displayName = "Post find on uuid counter")
     @Override
     public Post findById(UUID postUuid) {
         try (Connection conn = sql2o.beginTransaction()) {
             List<Post> posts = conn.createQueryWithParams("select * from posts where uuid=:uuid")
-                    .addParameter("uuid", "uuid").addColumnMapping("created_at", "createdAt")
-                    .addColumnMapping("updated_at", "updatedAt").addColumnMapping("publication_status", "status")
+                    .addParameter("uuid", postUuid)
+                    .addColumnMapping("created_at", "createdAt")
+                    .addColumnMapping("updated_at", "updatedAt")
+                    .addColumnMapping("publication_status", "status")
                     .executeAndFetch(Post.class);
                     if(posts.size()>0){
                         return posts.get(0);

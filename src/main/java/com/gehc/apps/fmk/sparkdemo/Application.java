@@ -9,6 +9,7 @@
 package com.gehc.apps.fmk.sparkdemo;
 
 import static spark.Spark.get;
+import static spark.Spark.put;
 import static spark.Spark.post;
 
 import java.util.List;
@@ -57,12 +58,32 @@ public class Application {
 			}
 		});
 
+		put("/posts/:uuid", (req, res) -> {
+			if (req.contentType().equals("application/json")) {
+				res.type("application/json");
+				Post post = gson.fromJson(req.body(), Post.class);
+				if(UUID.fromString(req.params("uuid")).equals(post.getUuid())){
+					postService.save(post);
+					res.status(HttpStatus.OK_200);
+					return gson.toJson(post);
+				}else{
+					//uuid on request does not patch the uuid into JSON body 
+					res.status(HttpStatus.NOT_ACCEPTABLE_406);
+					return "";
+				}
+			} else {
+				res.status(HttpStatus.BAD_REQUEST_400);
+				return "";
+			}
+		});
+
 		get("/posts/:uuid", (req, res) -> {
 			Post post = postService.findById(UUID.fromString(req.params("uuid")));
+			res.type("application/json");
 			if (post != null) {
 				res.status(HttpStatus.OK_200);
 				return gson.toJson(post);
-			} else {
+			} else {;
 				res.status(HttpStatus.NOT_FOUND_404);
 				return null;
 			}
