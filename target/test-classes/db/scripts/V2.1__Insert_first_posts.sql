@@ -1,0 +1,3 @@
+INSERT INTO posts (uuid,title,summary,content,author,tags,categories,created_at,updated_at) values ('29da23af-1872-416f-a2b1-9e37861bddce','title1','summary1','content1','Fred','tag1,tag2,tag3','home','2019-03-19','2019-03-19');
+INSERT INTO posts (uuid,title,summary,content,author,tags,categories,created_at,updated_at) values ('5a9ae5e5-1c73-4b04-a079-6a560a287ed9','title2','summary2','content2','Greg','tag1,tag2','news','2019-03-19','2019-03-19');
+INSERT INTO posts (uuid,title,summary,content,author,tags,categories,created_at,updated_at) values ('0c172559-0b48-4cb9-882a-aceedf864ec1','title3','summary3','content3','Josh','tag2,tag3','news','2019-03-19','2019-03-19');
