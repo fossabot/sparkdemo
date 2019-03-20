@@ -14,35 +14,35 @@
 		<project.mainClass>com.gehc.apps.fmk.sparkdemo.Application</project.mainClass>
 	</properties>
 
-    <inceptionYear>2019</inceptionYear>
+	<inceptionYear>2019</inceptionYear>
 
-    <organization>
-        <name>GE Healthcare</name>
-        <url>http://gehealthcare.com/</url>
-    </organization>
+	<organization>
+		<name>GE Healthcare</name>
+		<url>http://gehealthcare.com/</url>
+	</organization>
 
-    <developers>
-        <developer>
-            <name>Frédéric Delorme</name>
-            <email>frederic.delorme@ge.com</email>
-            <url>https://github.build.ge.com/212391884</url>
-            <organization>GE Healthcare</organization>
-            <organizationUrl>https://github.build.ge.com/</organizationUrl>
-            <timezone>Europe/Paris</timezone>
-            <roles>
-                <role>author</role>
-                <role>administrator</role>
-                <role>contributor</role>
-            </roles>
-        </developer>
-    </developers>
+	<developers>
+		<developer>
+			<name>Frédéric Delorme</name>
+			<email>frederic.delorme@ge.com</email>
+			<url>https://github.build.ge.com/212391884</url>
+			<organization>GE Healthcare</organization>
+			<organizationUrl>https://github.build.ge.com/</organizationUrl>
+			<timezone>Europe/Paris</timezone>
+			<roles>
+				<role>author</role>
+				<role>administrator</role>
+				<role>contributor</role>
+			</roles>
+		</developer>
+	</developers>
 
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.build.ge.com/212391884/sparkdemo/issues</url>
-    </issueManagement>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.build.ge.com/212391884/sparkdemo/issues</url>
+	</issueManagement>
 
-    <!--ciManagement>
+	<!--ciManagement>
         <system>Travis CI</system>
         <url>https://travis-ci.org/mcgivrer/BGF</url>
         <notifiers>
@@ -95,13 +95,13 @@
 			<artifactId>flyway-core</artifactId>
 			<version>5.2.4</version>
 		</dependency>
-
+		<!-- Data enhencer -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.6</version>
 		</dependency>
-
+		<!-- Add metrics -->
 		<dependency>
 			<groupId>org.eclipse.microprofile.opentracing</groupId>
 			<artifactId>microprofile-opentracing-api</artifactId>
@@ -118,6 +118,7 @@
 			<version>1.1</version>
 		</dependency>
 
+		<!--Some logger capabilities -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -128,6 +129,33 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.6.4</version>
 		</dependency>
+
+		<!-- Tests -->
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-weld</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java8</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
