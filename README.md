@@ -1,5 +1,7 @@
 # SparkDemo
 
+[![Travis Build](https://api.travis-ci.org/mcgivrer/sparkdemo.svg?branch=develop)](https://travis-ci.org/mcgivrer/sparkdemo/builds/509682697# "go and see build")
+
 A demonstration project to test the SparkJava framework with Rest service and persistence with a minimalistic SQL framework.
 
 THis simple project provide some REST CRUD opeation on a PostService to serve a blog.
