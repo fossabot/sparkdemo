@@ -19,10 +19,10 @@ At the first start some post will be insrted with the FlyWay systemn executing t
 See the structure of the `db/migration`:
 
 ```
-db\
-  migration\
-    V1.0__Createposts_table.sql
-    V1.1__Insert_first_posts.sql
+db
+ |_ migration
+    |_ V1.0__Createposts_table.sql
+    |_ V1.1__Insert_first_posts.sql
 ```
 
 The first create the table, the second populate the table.
@@ -77,7 +77,7 @@ You will get some JSON records:
 ]
 ```
 
-1. Create new post data
+2. Create new post data
 
 Create a new post with the following command and some `post.json` file:
 
@@ -101,7 +101,7 @@ and the `post-create.json` file:
 }
 ```
 
-1. update an existing post :
+3. update an existing post :
 
 Executing the following `curl` command will update one of the post :
 
@@ -140,7 +140,7 @@ reqsuest as in 2) on the UUID `29da23af-1872-416f-a2b1-9e37861bddce`:
 }
 ```
 
-1. and Delete a post on its UUID:
+4. and Delete a post on its UUID:
 
 ```bash
 $> curl -H "Content-Type: application/json" -X DELETE http://localhost:4567/posts/29da23af-1872-416f-a2b1-9e37861bddce
