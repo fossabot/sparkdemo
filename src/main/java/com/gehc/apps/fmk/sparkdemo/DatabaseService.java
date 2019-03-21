@@ -13,13 +13,12 @@ public class DatabaseService {
     protected DatabaseService() {
         props = ResourceBundle.getBundle("db");
         try {
+            
             // create or update schema if needed
-            Flyway flyway = new Flyway();
-            flyway.setDataSource(
-                    props.getString("db.url"), 
-                    props.getString("db.username"),
-                    props.getString("db.password"));
-            flyway.setLocations("classpath:db/scripts");
+            Flyway flyway = Flyway.configure().dataSource(
+                                props.getString("db.url"), 
+                                props.getString("db.username"),
+                                props.getString("db.password")).load();
             flyway.clean();
             flyway.migrate();
             // create database connection.
