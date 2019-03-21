@@ -1,0 +1,11 @@
+{
+    "uuid":"29da23af-1872-416f-a2b1-9e37861bddce",
+    "title":"title 4",
+    "summary":"summary 4",
+    "content":"content 4",
+    "author":"McG",
+    "createdAt":"2019-03-21T22:48:00.000Z",
+    "updatedAt":"2019-03-21T22:48:00.000Z",
+    "tags":"tag1,tag2,tag3",
+    "categories":"home"
+}

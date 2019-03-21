@@ -1,7 +1,0 @@
-com\gehc\apps\fmk\sparkdemo\entity\Post$PublicationStatus.class
-com\gehc\apps\fmk\sparkdemo\entity\Validate.class
-com\gehc\apps\fmk\sparkdemo\DatabaseService.class
-com\gehc\apps\fmk\sparkdemo\Application.class
-com\gehc\apps\fmk\sparkdemo\entity\Post.class
-com\gehc\apps\fmk\sparkdemo\PostService.class
-com\gehc\apps\fmk\sparkdemo\IPostService.class

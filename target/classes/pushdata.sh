@@ -1,5 +1,0 @@
-#!/bin/bash
-curl -d "{\"uuid\":\"29da23af-1872-416f-a2b1-9e37861bddce\",\"title\": \"title1\",\"summary\": \"summary1\",\"content\": \"content1\",\"author\": \"Fred\",\"createdAt\": \"2019-03-19T00:00:00.0+0100\",\"updatedAt\": \"2019-03-19T00:00:00.0+0100\",\"tags\": \"1,2,3\",\"categories\": \"1\"}" -H "Content-Type: application/json" -X POST "http://localhost:4567/posts"
-curl -d "{\"uuid\":\"e431c394-b95c-4faf-9fe7-ae385fb5f3c3\",\"title\": \"title2\",\"summary\": \"summary2\",\"content\": \"content2\",\"author\": \"Fred\",\"createdAt\": \"2019-03-19T00:00:00.0+0100\",\"updatedAt\": \"2019-03-19T00:00:00.0+0100\",\"tags\": \"1,3\",\"categories\": \"2\"}" -H "Content-Type: application/json" -X POST "http://localhost:4567/posts"
-curl -d "{\"uuid\":\"0c172559-0b48-4cb9-882a-aceedf864ec1\",\"title\": \"title3\",\"summary\": \"summary3\",\"content\": \"content3\",\"author\": \"Fred\",\"createdAt\": \"2019-03-19T00:00:00.0+0100\",\"updatedAt\": \"2019-03-19T00:00:00.0+0100\",\"tags\": \"2,3\",\"categories\": \"3\"}" -H "Content-Type: application/json" -X POST "http://localhost:4567/posts"
-curl http://localhost:4567/posts

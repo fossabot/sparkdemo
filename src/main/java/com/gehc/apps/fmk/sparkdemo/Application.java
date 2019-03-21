@@ -17,6 +17,7 @@ import java.util.UUID;
 
 import com.gehc.apps.fmk.sparkdemo.entity.Post;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.eclipse.jetty.http.HttpStatus;
 
@@ -33,7 +34,7 @@ public class Application {
 	public static void main(String[] args) {
 
 		PostService postService = new PostService();
-		Gson gson = new Gson();
+		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 
 		get("/posts", (req, res) -> {
 			int offset = getQueryParam(req, "offset", -1);
