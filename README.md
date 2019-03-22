@@ -1,6 +1,7 @@
 # SparkDemo
 
 [![Travis Build](https://api.travis-ci.org/mcgivrer/sparkdemo.svg?branch=develop)](https://travis-ci.org/mcgivrer/sparkdemo/builds/509682697# "go and see build")
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmcgivrer%2Fsparkdemo.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmcgivrer%2Fsparkdemo?ref=badge_shield)
 
 A demonstration project to test the SparkJava framework with Rest service and persistence with a minimalistic SQL framework.
 
@@ -178,3 +179,7 @@ if you request again with the same curl as in 1), you will get only:
 That's it !
 
 McG. (a.k.a. Frédéric Delorme AT GE.com)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmcgivrer%2Fsparkdemo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmcgivrer%2Fsparkdemo?ref=badge_large)
